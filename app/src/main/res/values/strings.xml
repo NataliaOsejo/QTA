@@ -6,4 +6,7 @@
     <string name="b_dosmitades">Solucionar</string>
     <string name="text_b_dosmitades">Ingresa una cadena de caracteres</string>
     <string name="hola_correo_dos_mitades">Hola correo</string>
+    <string name="navbar_dosmitades">Dos mitades</string>
+    <string name="navbar_dospalabras">Dos palabras</string>
+    <string name="navbar_quitarfragmento">Quitar fragmento</string>
 </resources>

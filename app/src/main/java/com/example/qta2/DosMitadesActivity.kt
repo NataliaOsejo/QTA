@@ -5,6 +5,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DosMitadesActivity : AppCompatActivity() {
 
@@ -29,6 +30,25 @@ class DosMitadesActivity : AppCompatActivity() {
             val resultado = intercambiarMitades(cadena)
             inputString.setText(resultado) // Muestra la cadena resultante
         }
+
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_dosmitades -> {
+                    true
+                }
+                R.id.nav_dospalabras -> {
+                    true
+                }
+                R.id.nav_quitarfragmento -> {
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
     }
 
     // Lógica para intercambiar las mitades de la cadena
@@ -46,4 +66,3 @@ class DosMitadesActivity : AppCompatActivity() {
             "$segundaMitad$primeraMitad"
         }
     }
-}
