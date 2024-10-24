@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">QTA2</string>
+    <string name="b_iniciar_sesion">Iniciar sesión</string>
 </resources>
