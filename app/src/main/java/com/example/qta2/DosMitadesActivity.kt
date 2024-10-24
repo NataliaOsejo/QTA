@@ -1,16 +1,33 @@
 package com.example.qta2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
 
 class DosMitadesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dosmitades)
+
+        // Configurar la Toolbar
+        val toolbar: Toolbar = findViewById(R.id.tvTitle)
+        setSupportActionBar(toolbar)
+
+        // Habilitar el ícono de navegación (X)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // Listener para el ícono de navegación
+        toolbar.setNavigationOnClickListener {
+            // Redirigir a la actividad de inicio de sesión
+            val intent = Intent(this, IniciarSesion::class.java)
+            startActivity(intent)
+            finish() // Opcional: finalizar esta actividad si no quieres volver a ella
+        }
 
         // Obtener el correo del Intent
         val email = intent.getStringExtra("EMAIL") ?: "Correo no ingresado"
@@ -21,7 +38,7 @@ class DosMitadesActivity : AppCompatActivity() {
         // Establecer el texto del correo
         emailPreview.text = "Hola $email"
 
-        val inputString: EditText = findViewById(R.id.etInputString)
+        val inputString: TextInputEditText = findViewById(R.id.dos_mitades_text)
         val solveButton: Button = findViewById(R.id.btnSolve)
 
         solveButton.setOnClickListener {

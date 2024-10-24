@@ -23,6 +23,7 @@
         </activity>
 
         <activity android:name=".IniciarSesion"> </activity>
+        <activity android:name=".DosMitadesActivity"> </activity>
 
 
     </application>
